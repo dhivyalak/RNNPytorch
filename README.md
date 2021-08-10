@@ -1,20 +1,20 @@
 # RNNPytorch
-[Deep Learning](https://developer.ibm.com/learningpaths/get-started-with-deep-learning/an-introduction-to-deep-learning/) is vast field that employs artifical neural networks to process data and train a machine learning model. Two approaches used are *[supervised and unsupervised learning](https://developer.ibm.com/learningpaths/get-started-with-deep-learning/deep-learning-architectures/)*. In this tutorial, we will be focusing on autoencoders. An autoencoder is a type of unsupervised learning technique, which means the machine is using and analyzing unlabeled data sets. Using this method, the model is able to learn patterns in the data and learn how to reconstruct the inputs as its outputs after significanlty downsizing it.  
+ 
+[Deep Learning](https://developer.ibm.com/learningpaths/get-started-with-deep-learning/an-introduction-to-deep-learning/) is vast field that employs artifical neural networks to process data and train a machine learning model. Two approaches used are *[supervised and unsupervised learning](https://developer.ibm.com/learningpaths/get-started-with-deep-learning/deep-learning-architectures/)*. In this tutorial, we will be focusing on Recurrent Neural Networks. An RNN utilizes supervised Deep Learning to employ sequential learning to develop a model. This Deep Learning technique is especially useful when handling time series data- as we are doing in this tutorial. 
 
-Autoencoders have four main layers: encoder, bottleneck, decoder, and the reconstruction loss.
+As with creating any machine learning model, it is important we understand the data we are analyzing. This allows the developer to utilize the most relevant model architecture. Specifically, the aim of this tutorial is to create a basic model that can predict the value of a given stock using daily Open, High, Low and Close Values. The stock market can be extremely volatile and there are many factors that can influence and contribute to the value of a stock. Let us start by better understanding the different parameters of the stock data. 
 
-* The encoder is the given input with reduced dimentionality.
-* The bottleneck is the compressed representation of the encoded data.
-* The decoder is the reconstructed version of the original output.
-* The reconstruction loss is the difference between the original output and the reconstructed output.
+* **Open**: The price of a given stock when the market opens. 
 
->Input -> Encoder -> Bottleneck -> Decoder -> Ouput
+* **High**: The highest price a stock is trading at during market hours. 
 
-The goal of the model is to minimize the difference between the original output and the reconstructed output, or in other words, to reduce the reconstruction loss.
+* **Low**: The lowest price a stock is tradign at duruing market hours. 
 
-Some popular applciations of autoencoders are image denoising, dimensionality reduction, and feature extraction, to name a few. The following tutorial will touch on some of these applications and introduce basic autoencoder concepts using Tensorflow. Tensorflow is a Python library that is used to create Deep Learning Models. IBM Watson® Studio is a data science platform that provides all of the tools necessary to develop a data-centric solution on the cloud.
+* **Close**: The price of a given stock when the market closes. It is used by financial institutions as the value of a stock on a particular day as its takes in to account all of the events of the day and any fluctuations that could have occured during the market. 
 
-In this tutorial, an MNIST data set is used, and it is deployed on IBM Watson Studio on IBM Cloud Pak® for Data.
+The overall importance of the close value, and its use as a benchmark for the daily value of a stock, indicates that this is the value we should try and predict. In order to accomplish this, we can build a model that leverages Long Short Term Memory, an RNN technique, to store concurrently analyze larger sets of time series data. 
+
+In this tutorial, a Stock Data collected by IBM Watson is imported and deployed on IBM Watson Studio on IBM Cloud Pak® for Data.
 
 # Learning Objectives
 
@@ -91,37 +91,37 @@ After the service instance is created, you are returned to the IBM Cloud Pak for
 
 ![new project](images/cpdaas-new-project.png)
 
-2.Select Create an empty project.
+2. Select Create an empty project.
 
 ![empty project](images/cpdaas-empty-project.png)
 
-3.Provide a name for the project. You must associate an IBM Cloud Object Storage instance with your project. If you already have an IBM Cloud Object Storage service instance in your IBM Cloud account, it should automatically be populated here. Otherwise, click Add.
+3. Provide a name for the project. You must associate an IBM Cloud Object Storage instance with your project. If you already have an IBM Cloud Object Storage service instance in your IBM Cloud account, it should automatically be populated here. Otherwise, click Add.
 
 ![set project name](images/cpdaas-project-name.png)
 
-4.Select the type of plan to create (a Lite plan should suffice for this tutorial), and click Create.
+4. Select the type of plan to create (a Lite plan should suffice for this tutorial), and click Create.
 
 ![select lite plan](images/cos-lite-plan.png)
 
-5.Click Refresh on the project creation page.
+5. Click Refresh on the project creation page.
 
 ![refresh creation page](images/cpdaas-refresh-cos.png)
 
-6.Click Create after you see the IBM Cloud Object Storage instance that you created displayed under Storage.
+6. Click Create after you see the IBM Cloud Object Storage instance that you created displayed under Storage.
 
 ![create project](images/cpdaas-create-project.png)
 
-7.After the project is created, you can add the Notebook to the project. Click Add to project +, and select Notebook.
+7. After the project is created, you can add the Notebook to the project. Click Add to project +, and select Notebook.
 
 ![add notebook to proj](images/cpdaas-add-notebook-to-project.png)
 
-8.Switch to the From URL tab. Provide the name of the Notebook as "RNN Implementation Using Pytorch". Notebook URL as: "update"
+8. Switch to the From URL tab. Provide the name of the Notebook as "RNN Implementation Using Pytorch". Notebook URL as: "update"
 
-9.Under the Select runtime drop-down menu, select Default Python 3.7 S (4 vCPU 16 GB RAM). Click Create.
+9. Under the Select runtime drop-down menu, select Default Python 3.7 S (4 vCPU 16 GB RAM). Click Create.
 
 ![load the notebook](images/loadingNotebook.png)
 
-10.After the Jupyter Notebook is loaded and the kernel is ready, you can start running the cells in the Notebook.
+10. After the Jupyter Notebook is loaded and the kernel is ready, you can start running the cells in the Notebook.
 
 ![image of the notebook](images/notebookImage.png)
 
@@ -145,12 +145,7 @@ You run cells individually by highlighting each cell, then either clicking Run a
 
 The Notebook is divided into multiple sections:
 
-1. Introduction
-2. Feature Extraction and Dimensionality Reduction
-3. Autoencoder Structure
-4. Performance
-5. Training: Loss Function
-6. Code
+
 
 Section 6 contains the code to create, validate, test, and run the autoencoder model.
 
