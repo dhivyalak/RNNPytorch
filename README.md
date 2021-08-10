@@ -38,8 +38,13 @@ It should take you approximately **x** hours complete the tutorial.
 
 1. Set up IBM Cloud Pak for Data as a Service.
 2. Create a new project and import the Notebook.
-3. Read through the Notebook.
-4. Run the Notebook.
+3. Import Stock Data CSV file to your newly imported Notebook
+    a. Open data set in IBM Cloud Pak
+    b. Examine data
+    c. Follow import instructions. 
+>DO NOT SHARE THE NOTEBOOK WITH THE NEWLY IMPORTED DATA! Each import contains a personailized and secure API key. DO NOT publish the notebook with the API key to any public Version Control systems (i.e. GitHub). This will compromise security. 
+4. Read through the Notebook.
+5. Run the Notebook.
 
 # Set up IBM Cloud Pak for Data as a Service.
 
@@ -110,7 +115,7 @@ After the service instance is created, you are returned to the IBM Cloud Pak for
 
 ![add notebook to proj](images/cpdaas-add-notebook-to-project.png)
 
-8.Switch to the From URL tab. Provide the name of the Notebook as "AutoencoderUsingTensorFlow". Notebook URL as: "https://raw.githubusercontent.com/IBM/dl-learning-path-assets/main/unsupervised-deeplearning/notebooks/AutoEncoders.ipynb"
+8.Switch to the From URL tab. Provide the name of the Notebook as "RNN Implementation Using Pytorch". Notebook URL as: "update"
 
 9.Under the Select runtime drop-down menu, select Default Python 3.7 S (4 vCPU 16 GB RAM). Click Create.
 
@@ -125,6 +130,8 @@ After the service instance is created, you are returned to the IBM Cloud Pak for
 ![stop the kernel](images/stopKernel.png)
 
     Note: The Jupyter Notebook included in the project has been cleared of output. If you would like to see the Notebook that has already been completed with output, refer to the [example Notebook](https://raw.githubusercontent.com/IBM/dl-learning-path-assets/main/unsupervised-deeplearning/examples/autoencoders.ipynb).
+# Import Stock Data CSV file
+For this tutorial, we will be using Stock Data from IBM Watson 
 
 # Read through the Notebook
 
