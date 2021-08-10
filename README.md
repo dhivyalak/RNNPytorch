@@ -42,7 +42,7 @@ It should take you approximately **x** hours complete the tutorial.
     a. Open data set in IBM Cloud Pak
     b. Examine data
     c. Follow import instructions. 
->DO NOT SHARE THE NOTEBOOK WITH THE NEWLY IMPORTED DATA! Each import contains a personailized and secure API key. DO NOT publish the notebook with the API key to any public Version Control systems (i.e. GitHub). This will compromise security. 
+><strong>DO NOT SHARE THE NOTEBOOK WITH THE NEWLY IMPORTED DATA! Each import contains a personailized and secure API key. DO NOT publish the notebook with the API key to any public Version Control systems (i.e. GitHub). This WILL compromise the security of your account</strong>. 
 4. Read through the Notebook.
 5. Run the Notebook.
 
