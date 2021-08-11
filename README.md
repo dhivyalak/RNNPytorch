@@ -115,7 +115,7 @@ After the service instance is created, you are returned to the IBM Cloud Pak for
 
 ![add notebook to proj](images/cpdaas-add-notebook-to-project.png)
 
-8. Switch to the From URL tab. Provide the name of the Notebook as "RNN Implementation Using Pytorch". Notebook URL as: "update"
+8. Switch to the From URL tab. Provide the name of the Notebook as "RNN Implementation using Pytorch". Notebook URL as: "update"
 
 9. Under the Select runtime drop-down menu, select Default Python 3.7 S (4 vCPU 16 GB RAM). Click Create.
 
@@ -131,7 +131,11 @@ After the service instance is created, you are returned to the IBM Cloud Pak for
 
     Note: The Jupyter Notebook included in the project has been cleared of output. If you would like to see the Notebook that has already been completed with output, refer to the [example Notebook](https://raw.githubusercontent.com/IBM/dl-learning-path-assets/main/unsupervised-deeplearning/examples/autoencoders.ipynb).
 # Import Stock Data CSV file
-For this tutorial, we will be using Stock Data from IBM Watson 
+For this tutorial, we will be using Stock Data from IBM Watson. You can find the link to the stock data here:
+
+1. Go to your "RNN Implementation using Pytorch" project. 
+
+2. 
 
 # Read through the Notebook
 
