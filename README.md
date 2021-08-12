@@ -127,7 +127,7 @@ After the service instance is created, you are returned to the IBM Cloud Pak for
 
 ![stop the kernel](images/stopKernel.png)
 
-    Note: The Jupyter Notebook included in the project has been cleared of output. If you would like to see the Notebook that has already been completed with output, refer to the [example Notebook](update link)(update link)
+>Note: The Jupyter Notebook included in the project has been cleared of output. If you would like to see the Notebook that has already been completed with output, refer to the [example Notebook](update link)(update link)
 # Import Stock Data CSV file
 For this tutorial, we will be using Stock Data from IBM Watson. You can find the link to the stock data here:
 
@@ -159,7 +159,7 @@ Spend some time looking through the sections of the Notebook to get an overview.
 
 You run cells individually by highlighting each cell, then either clicking Run at the top of the Notebook or using the keyboard shortcut to run the cell (Shift + Enter, but this can vary based on the platform). While the cell is running, an asterisk ([*]) appears to the left of the cell. When that cell has finished running, a sequential number appears (for example, [17]).
 
-![code cells before running](codeCellsBeforeRunning.png)
+![code cells before running](images/codeCellsBeforeRunning.png)
 
     Note: Some of the comments in the Notebook are directions for you to modify specific sections of the code. Perform any changes as indicated before running the cell.
 
