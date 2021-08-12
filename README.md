@@ -88,11 +88,11 @@ After the service instance is created, you are returned to the IBM Cloud Pak for
 
 ![new project](images/cpdaas-new-project.png)
 
-2. Select Create an empty project. Let's name this one "Deep Learning Fundamentals". 
+2. Select Create an empty project. 
 
 ![empty project](images/cpdaas-empty-project.png)
 
-3. Provide a name for the project. You must associate an IBM Cloud Object Storage instance with your project. If you already have an IBM Cloud Object Storage service instance in your IBM Cloud account, it should automatically be populated here. Otherwise, click Add.
+3. Provide a name for the project.  Let's name this one "Deep Learning Fundamentals". You must associate an IBM Cloud Object Storage instance with your project. If you already have an IBM Cloud Object Storage service instance in your IBM Cloud account, it should automatically be populated here. Otherwise, click Add.
 
 ![set project name](images/cpdaas-project-name.png)
 
