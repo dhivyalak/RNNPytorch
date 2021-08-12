@@ -18,10 +18,10 @@ In this tutorial, a Stock Data collected by IBM Watson is imported and deployed 
 
 # Learning Objectives
 
-In the tutorial, you import a Jupyter Notebook that is written in Python into IBM Watson Studio on IBM Cloud Pak for Data as a Service, then run through the Notebook. The Notebook creates an Autoencoder model using Tensorflow based on an MNIST data set, encoding and decoding the data. After running the Notebook, you should understand how TensorFlow builds and executes an Autoencoder. You'll learn how to:
+In the tutorial, you import a Jupyter Notebook that is written in Python into IBM Watson Studio on IBM Cloud Pak for Data as a Service, then run through the Notebook. The Notebook creates an RNN using PyTorch using Stock Data from IBM Watson. After running the Notebook, you should understand the basics of how to build an RNN. You'll learn how to:
 
 - Run a Jupyter Notebook using Watson Studio on IBM Cloud Pak for Data as a Service
-- Build an Autoencoder model using Tensorflow
+- Build an RNN using PyTorch
 - Train the model and evaluate the model by performing validation and testing
 
 # Prerequisites
@@ -39,9 +39,6 @@ It should take you approximately **x** hours complete the tutorial.
 1. Set up IBM Cloud Pak for Data as a Service.
 2. Create a new project and import the Notebook.
 3. Import Stock Data CSV file to your newly imported Notebook
-    a. Open data set in IBM Cloud Pak
-    b. Examine data
-    c. Follow import instructions. 
 ><strong>DO NOT SHARE THE NOTEBOOK WITH THE NEWLY IMPORTED DATA! Each import contains a personailized and secure API key. DO NOT publish the notebook with the API key to any public Version Control systems (i.e. GitHub). This WILL compromise the security of your account</strong>. 
 4. Read through the Notebook.
 5. Run the Notebook.
@@ -91,7 +88,7 @@ After the service instance is created, you are returned to the IBM Cloud Pak for
 
 ![new project](images/cpdaas-new-project.png)
 
-2. Select Create an empty project.
+2. Select Create an empty project. Let's name this one "Deep Learning Fundamentals". 
 
 ![empty project](images/cpdaas-empty-project.png)
 
@@ -117,58 +114,73 @@ After the service instance is created, you are returned to the IBM Cloud Pak for
 
 8. Switch to the From URL tab. Provide the name of the Notebook as "RNN Implementation using Pytorch". Notebook URL as: "update"
 
+
 9. Under the Select runtime drop-down menu, select Default Python 3.7 S (4 vCPU 16 GB RAM). Click Create.
 
-![load the notebook](images/loadingNotebook.png)
+![create notebook](images/createNotebook.png)
 
 10. After the Jupyter Notebook is loaded and the kernel is ready, you can start running the cells in the Notebook.
 
-![image of the notebook](images/notebookImage.png)
+![image of the notebook](images/imageOfNotebook.png)
 
     Important: Make sure that you stop the kernel of your notebooks when you are done to conserve memory resources.
 
 ![stop the kernel](images/stopKernel.png)
 
-    Note: The Jupyter Notebook included in the project has been cleared of output. If you would like to see the Notebook that has already been completed with output, refer to the [example Notebook](https://raw.githubusercontent.com/IBM/dl-learning-path-assets/main/unsupervised-deeplearning/examples/autoencoders.ipynb).
+    Note: The Jupyter Notebook included in the project has been cleared of output. If you would like to see the Notebook that has already been completed with output, refer to the [example Notebook](update link)(update link)
 # Import Stock Data CSV file
 For this tutorial, we will be using Stock Data from IBM Watson. You can find the link to the stock data here:
 
-1. Go to your "RNN Implementation using Pytorch" project. 
+1. Download the CSV file found at this link to your local drive, name it "StockData.csv": 
 
-2. 
+2. Go to your "Deep Learning Fundamentals" project. 
 
+3. To add the Stock Data CSV file to the project, click Add to project +, and select Data.
+![add data](images/addData.png)
+
+4. Under the load tab, add your localy downloaded version of the CSV file. 
+![load data](images/loadData.png)
+
+5. Go to the "RNN Implementation using Pytorch" notebook
+
+6. Go to the second Code cell under the **Code** section of the notebook. 
+
+7. Click on this icon in the top right of the action bar.
+![load data](images/dataImportIcon.png)
+
+8. Select the "StockData.csv" and add it as a Pandas dataframe.
+![add data as pandas](images/addDataAsPandas.png)
+
+9. Your data should successfully be imported! 
+> DO NOT PUBLICALLY POST OR SUBMIT THIS CODE CELL ON ANY PUBLIC PLATFORMS OR VERSION CONTROL SYSTEMS. IT CONTAINS SENSITIVE KEYS THAT ARE UNIQUE TO YOUR ACCOUNT. TO MAINTAIN SECURITY, DO NOT SHARE THEM. 
 # Read through the Notebook
 
 Spend some time looking through the sections of the Notebook to get an overview. A Notebook is composed of text (markdown or heading) cells and code cells. The markdown cells provide comments on what the code is designed to do.
 
 You run cells individually by highlighting each cell, then either clicking Run at the top of the Notebook or using the keyboard shortcut to run the cell (Shift + Enter, but this can vary based on the platform). While the cell is running, an asterisk ([*]) appears to the left of the cell. When that cell has finished running, a sequential number appears (for example, [17]).
 
-![code cells before running](images/codeCell.png)
+![code cells before running](codeCellsBeforeRunning.png)
 
     Note: Some of the comments in the Notebook are directions for you to modify specific sections of the code. Perform any changes as indicated before running the cell.
 
 The Notebook is divided into multiple sections:
+1. Introduction to Recurrent Neural Networks
+2. Long-Short Term Memory
+3. Time Series Data
+4. Understanding the Dataset
+5. Using Pytorch
+6. Code
 
-
-
-Section 6 contains the code to create, validate, test, and run the autoencoder model.
+The code section is where you can find the code pattern and RNN implementation. 
 
 # Run the Notebook
 
 1. Run the code cells in the Notebook starting with the ones in section 4. The first few cells bring in the required modules such as TensorFlow, Numpy, reader, and the data set.
 
-    Note: The second code cell checks for the version of TensorFlow. The Notebook works only with TensorFlow version 2.2.0-rc0. Therefore, if an error is thrown here, you need to ensure that you have installed TensorFlow version 2.2.0-rc0 in the first code cell.
+2. The training, validation, and testing of the model does not happen until the last code cell. Running all 5 epochs will take some time, about 10 minutes at most.
 
-![python imports](images/importsInCodeCells.png)
-
-    Note: If you have installed TensorFlow version 2.2.0-rc0 and still get the error, your changes are not being picked up and you must restart the kernel by clicking Kernel->Restart and Clear Output. Wait until all of the outputs disappear, and then your changes should be picked up.
-
-![restart kernel and clear cell output](images/restartAndClearOutput.png)
-
-2. The training, validation, and testing of the model does not happen until the last code cell. Running all 20 epochs will take some time, about 30 minutes at most.
-
-![train 20 epoch](images/trainingModelFor20Epochs.png)
+![train 5 epoch](images/fiveEpochs.png)
 
 # Summary
 
-In this tutorial, you learned about Autoencoders and ran an implementation on Jupyter Notebook using Watson Studio on IBM Cloud Pak for Data as a Service. Utilizing python libraries such as: Tensorflow, MatPlotLib, and NumPy were also key to create the model.
+In this tutorial, you learned about RNNs and ran an implementation on Jupyter Notebook using Watson Stock data as well as Watson Studio on IBM Cloud Pak for Data as a Service. Utilizing python libraries such as: PyTorch, MatPlotLib, and NumPy were also key in creating the model.
