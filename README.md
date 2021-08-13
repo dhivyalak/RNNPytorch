@@ -106,7 +106,6 @@ After the service instance is created, you are returned to the IBM Cloud Pak for
 
 6. Click Create after you see the IBM Cloud Object Storage instance that you created displayed under Storage.
 
-![create project](images/cpdaas-create-project.png)
 
 7. After the project is created, you can add the Notebook to the project. Click Add to project +, and select Notebook.
 
