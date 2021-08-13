@@ -102,7 +102,6 @@ After the service instance is created, you are returned to the IBM Cloud Pak for
 
 5. Click Refresh on the project creation page.
 
-![refresh creation page](images/cpdaas-refresh-cos.png)
 
 6. Click Create after you see the IBM Cloud Object Storage instance that you created displayed under Storage.
 
