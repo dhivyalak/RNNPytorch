@@ -94,7 +94,7 @@ After the service instance is created, you are returned to the IBM Cloud Pak for
 
 3. Provide a name for the project.  Let's name this one "RNN using PyTorch". You must associate an IBM Cloud Object Storage instance with your project. If you already have an IBM Cloud Object Storage service instance in your IBM Cloud account, it should automatically be populated here. Otherwise, click Add.
 
-![set project name](images/cpdaas-project-name.png)
+![set project name](images/creatingProj.png)
 
 4. Select the type of plan to create (a Lite plan should suffice for this tutorial), and click Create.
 
